@@ -1,0 +1,45 @@
+<div>
+
+<p id=e><p id=p>@</p><p id=s>>
+<script>x=a=l=0,g=60
+r=()=>Math.floor(Math.random()*30)
+n=()=>{a=r();l++}
+m=(e,x)=>e['style'].marginLeft=x*20
+n()
+onkeydown=v=>{if(g<0)return
+r()<5?g-=l:r()<1?g+=30:x+=v.keyCode==37?-1:1
+x==a?n():0
+e.innerHTML="HP "+g+" Lv"+l
+m(s,a)
+m(p,x)}</script>
+
+<!-- This was the definitive one for 2017 -->
+</div>
+
+<h1>Rogue280</h1>
+
+<h2>What's this?</h2>
+<p>A roguelike whose full source code fits the new 280 characters limit of <a href = "https://twitter.com/slashie_/status/933133525364207624">a tweet</a></p>
+<p>This is my first try, check out the latest one <a href = "http://slashie.net/rogue280">here</a></p>
+<h2>Instructions</h2>
+<p>Your goal is to go as deep as possible in the dungeons of doom</p>
+<p>Press left and right to explore the level and find the stairs to go to the next one</p>
+<p>While exploring the level, you may find potions that increase your HP by 30, or monsters
+which will reduce it, they are stronger as you go deeper</p>
+<p>Good luck!</p>
+
+<h2>Full source code</h2>
+<pre>
+&lt;p id=e&gt;&lt;p id=p&gt;@&lt;/p&gt;&lt;p id=s&gt;&gt;
+&lt;script&gt;x=a=l=0,g=60
+r=()=&gt;Math.floor(Math.random()*30)
+n=()=&gt;{a=r();l++}
+m=(e,x)=&gt;e['style'].marginLeft=x*20
+n()
+onkeydown=v=&gt;{if(g&lt;0)return
+r()&lt;5?g-=l:r()&lt;1?g+=30:x+=v.keyCode==37?-1:1
+x==a?n():0
+e.innerHTML=&quot;HP &quot;+g+&quot; Lv&quot;+l
+m(s,a)
+m(p,x)}&lt;/script&gt;
+</pre>

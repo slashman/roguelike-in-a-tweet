@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<script>
+			let x = l = 0
+			let g = 30
+			function r() {
+				return Math.floor(Math.random()*30)
+			}
+			function n() {
+				l++
+				a = r()
+				$ = r()
+			}
+			function f() {
+				m=" "
+				for(let i=x-5; i<x+6; i++) {
+					let tile = '_'
+					if (i === x){
+						tile = '@'
+					} else if (i === $) {
+						tile = '±'
+					} else if (i%30 !== i) {
+						tile = '#'
+					} else if (i%3 !== 0) {
+						tile = '#'
+					}
+					m += tile
+					document.getElementById('e').innerHTML = `H${g}L${g}${m}`
+				}
+			}
+			function init() {
+				n()
+				onkeydown = function(v) {
+					if (g<=0) {
+						return
+					}
+					if (r()<5) {
+						g -= l
+					} else {
+						x += v.which==37 ? -1 : 1;
+						if (x === a) {
+							n()
+						}
+						if (x === $) {
+							$ = r()
+							g +=r()
+						}
+						f()
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<p id="e"></p>
+	</body>
+</html>

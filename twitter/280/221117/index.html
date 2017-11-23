@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>Rogue280 v2 - Roguelike in a tweet</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div style ="font-size: 20px; font-family:monospace;">
+
+<p id=e><script>
+x=l=0,g=30
+r=_=>Math.random()*30|0
+n=_=>a=r(l++,$=r())
+f=_=>{for(m=" ",i=x-5;i<x+6;i++)m+=i==x?'@':i==$?'±':i==a?'>':i%30!=i?'#':i%3?'»':'_';e.innerHTML=`H${g}L`+l+m}
+n()
+onkeydown=v=>g>0&&(r()<5?g-=l:(x+=v.which==37?-1:1)-a?0:n(),x==$?g+=r($=r()):0,f())</script>
+
+</div>
+
+<h1>Rogue280v2</h1>
+<p><i>Press any key to start</i></p>
+<h2>What's this?</h2>
+<p>A roguelike whose full source code fits the new 280 characters limit of <a href = "https://twitter.com/slashie_/status/933133525364207624">a tweet</a></p>
+<p>This is my second try, check out the first one <a href = "http://slashie.net/rogue280/1">here</a></p>
+
+<h2>Instructions</h2>
+<p>Your goal is to go as deep as possible in the dungeons of doom</p>
+<p>Press left and right to explore the level and find the stairs (>) to go to the next one.</p>
+<p>While exploring the level, you may also find altars (±) that increase your HP by a random amount, or monsters which will reduce it, they are stronger as you go deeper.</p>
+<p>Once you have found the stairs, it's your choice if you want to keep exploring or if you want to proceed.</p>
+<p>Good luck!</p>
+
+<h2>Full Source Code</h2>
+
+<pre>
+&lt;p id=e&gt;&lt;script&gt;
+x=l=0,g=30
+r=_=&gt;Math.random()*30|0
+n=_=&gt;a=r(l++,$=r())
+f=_=&gt;{for(m=&quot; &quot;,i=x-5;i&lt;x+6;i++)
+m+=i==x?'@':i==$?'&plusmn;':i==a?'&gt;':i%30!=i?
+'#':i%3?'&raquo;':'_';e.innerHTML=`H${g}L`+l+m}
+n()
+onkeydown=v=&gt;g&gt;0&amp;&amp;(r()&lt;5?g-=l:
+(x+=v.which==37?-1:1)-a?0:n(),
+x==$?g+=r($=r()):0,f())&lt;/script&gt;
+</pre>
+</body>
+</html>
+
+<!--
+Variables
+x = Player position
+$ = altar position
+a = stairs position
+l = Level
+g = HP
+m = map
+
+Functions
+r = Random 0 to 29
+n = New level
+f = Refresh map
+
+Emojis:
+🚪
+웃
+🗿
+❤️
+	-->

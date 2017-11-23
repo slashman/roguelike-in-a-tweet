@@ -1,0 +1,7 @@
+<p id=e><script>
+x=l=0,g=30
+r=_=>Math.random()*30|0
+n=_=>a=r(l++,$=r())
+f=_=>{for(m=" ",i=x-5;i<x+6;i++)m+=i==x?'@':i==$?'±':i==a?'>':i%30!=i?'#':i%3?'»':'_';e.innerHTML=`H${g}L`+l+m}
+n()
+onkeydown=v=>g>0&&(r()<5?g-=l:(x+=v.which==37?-1:1)-a?0:n(),x==$?g+=r($=r()):0,f())</script>
