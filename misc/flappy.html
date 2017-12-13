@@ -1,0 +1,41 @@
+<!--
+<p id=p />
+<p id=s>*</p>
+<script>
+	var x=y=c=e=0;
+	setInterval(function(){
+		if(x<=0){
+			//e=Math.random()*3+1;
+			e=1;
+			x=80;
+		}
+		x-=e;
+		s.style.marginLeft=x;
+		y?y+=y<20?1:-y:0;
+		p.innerHTML=(y?'> ':'@ ')+c;
+		c+=x<=0?y?1:-c:0;
+	},20);
+	onkeydown = function(){
+		y=y?y:1;
+	}
+</script>
+-->
+
+
+<p id=p /><p id=s>*</p><script>x=y=c=e=0;setInterval("if(x<=0){e=Math.random()*3+1;x=80*e;}x-=e;s.style.marginLeft=x;y?y+=y<20?1:-y:0;p.innerHTML=(y?'> ':'@ ')+c;c+=x<=0?y?1:-c:0;",20);onkeydown=function(){y=y?y:1}</script>
+
+<!--
+<p id=p onclick="y=y?y:1"/><p id=s>*</p><script>x=y=c=e=0;setInterval("if(x<=0){e=Math.random()*3+1;x=80*e;}x-=e;s.style.marginLeft=x;y?y+=y<20?1:-y:0;p.innerHTML=(y?'> ':'@ ')+c;c+=x<=0?y?1:-c:0;",20);</script>
+-->
+<!--
+<p id=p onclick=y=y?y:1><p id=s>*<script>x=y=c=0;setInterval("x=x<0?200:x-1;s.style.marginLeft=x;y?y+=y<60?1:-y:0;p.innerHTML=y?'^':c;c+=x<0?y?1:-c:0;",5)</script>
+-->
+<!--
+<p id=p onclick=y=y?y:1><p id=s>*<script>x=y=0;setInterval("x=x<0?200:x-1;s.style.marginLeft=x;y?y+=y<60?1:-y:0;p.innerHTML=y?'^':'>'",5)</script>
+-->
+<!--
+<body onload="x=y=c=0;setInterval('s.style.marginLeft=x=x<0?200:x-1;y?y+=y<60?1:-y:0;p.innerHTML=c+=x<0?y?1:-c:0',5)"><p id=p onclick=y=y?y:1><p id=s>*
+-->
+<!--000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-->
+ 
+ 

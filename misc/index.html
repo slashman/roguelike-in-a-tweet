@@ -1,0 +1,30 @@
+<!-- 
+
+ Choose whether to explore or go down
+ Explore may find exit, get more power or less power
+ Go down increases level
+ Death if power = 0
+
+ -->
+<title>Slashie's Roguelike in a tweet</title>
+
+<body onload=f=r=0;p=9;l=2 onclick="r=Math.random();if(r>.8)f=1;p+=r<.3?3:-l/2|0;m.innerHTML='P'+p+'L'+l+'S'+f"><p id=m onclick=f?l++:0;f=0>
+
+
+<h2>How to play</h2>
+<ul>
+<li>Click anywhere in the screen to explore the current dungeon level, your stats will show in the top of page like this:
+<ul><li>P: Your power</li>
+<li>L: Current dungeon level</li>
+<li>S: 1 means you have found the stairs for the next level</li>
+</ul>
+</li>
+<li>Every time you get to a new level you have to explore it to find the stairs, when exploring lots of things could happen to you... you could have your power increased by finding ancient artifacts, or have it decreased by fighting evil monsters, or you might find the stairs leading to the next dark scary level of the dungeon.</li>
+<li>Once you have found the stairs to the next level, you can click your stats to use them, or you may continue exploring the level.</li>
+<li>If your power drops below 0, consider yourself dead. Your journey is over, refresh the page to start over.</li>
+</ul>
+
+<p>Here's the full source code:</p>
+<code>
+&lt;body onload=f=r=0;p=9;l=2 onclick="r=Math.random();if(r&gt;.8)f=1;p+=r&lt;.3?3:-l/2|0;m.innerHTML='P'+p+'L'+l+'S'+f"&gt;&lt;p id=m onclick=f?l++:0;f=0&gt;
+</code>

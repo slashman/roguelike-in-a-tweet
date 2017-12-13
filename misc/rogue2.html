@@ -1,0 +1,16 @@
+<style>p{position:absolute}</style>
+<p id=p>@</p><p id=e>>
+<script>
+var x=y=0,a=b=15
+m=(e,x,y)=>{
+	e.style.left=x*20;
+	e.style.top=y*20;
+}
+onkeydown=v=>{
+	o=v.keyCode-37;
+	y+=o%2?o==3?1:-1:0;
+	x+=o%2?0:o==0?-1:1;
+	if(x==a & y==b)n();
+	m(p,x,y);
+}
+</script>

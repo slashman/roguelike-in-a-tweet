@@ -1,0 +1,26 @@
+<style>p{position:absolute}</style><p id="p">@</p><p id="e">o</p>
+<script>
+var x=y=a=b=0;
+function r(){
+	return Math.floor(Math.random()*20);
+}
+function n(){a=r();b=r();}
+function s(a,b){
+	return a-b>0?-1:1;
+}
+function m(e,x,y){
+	e.style.left=x*20;
+	e.style.top=y*20;
+}
+n();
+document.onkeydown=function(v){
+	o=v.keyCode-37;
+	y+=o%2?o==3?1:-1:0;
+	x+=o%2?0:o==0?-1:1;
+	if(x==a & y==b)n();
+	if(x==a)b+=s(b,y);else a+=s(a,x);
+	if(x==a & y==b)n();
+	m(p,x,y);
+	m(e,a,b);
+}
+</script>

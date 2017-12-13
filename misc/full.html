@@ -1,0 +1,86 @@
+<style>p{position:absolute}</style><p id="p">@</p><p id="e">o</p>
+<script>
+var x=y=a=b=0;
+function r(){
+	return Math.floor(Math.random()*20);
+}
+function n(){a=r();b=r();}
+function s(a,b){
+	return a-b>0?-1:1;
+}
+function m(e,x,y){
+	e.style.left=x*20;
+	e.style.top=y*20;
+}
+n();
+document.onkeydown=function(v){
+	o=v.keyCode-37;
+	y+=o%2?o==3?1:-1:0;
+	x+=o%2?0:o==0?-1:1;
+	if(x==a & y==b)n();
+	if(x==a)b+=s(b,y);else a+=s(a,x);
+	if(x==a & y==b)n();
+	m(p,x,y);
+	m(e,a,b);
+}
+</script>
+
+
+<p id="p" style="position:absolute">@</p>
+<script>
+var x=y=0;
+onkeydown=function(v){
+	o=v.keyCode-37;
+	y+=o%2?o==3?1:-1:0;
+	x+=o%2?0:o==0?-1:1;
+	p.style.left=x*9;
+	p.style.top=y*9;
+}
+</script>
+
+
+-- JUmp, full
+<p id=p>@</p>
+<p id=s>*</p>
+<script>
+	var x=y=c=e=0;
+	setInterval(function(){
+		if(x<=0){
+			x = Math.random()*300+50;
+			e = 2+x%3;
+		}
+		x-= e;
+		s.style.marginLeft = x;
+		if (y){
+			p.innerHTML=(y==20?'@ ':'> ')+c;
+			y+=y<20?1:-y;
+		}
+		c+=x<0?y?1:-c:0;
+	},20);
+	onkeydown = function(){
+		y=y?y:1;
+	}
+</script>
+
+<p id=p>@</p><p id=s>*</p><script>var x=y=c=e=0;setInterval(function(){if(x<=0){x = Math.random()*300+50;e = 2+x%3;}x-=e;s.style.marginLeft=x;if(y){p.innerHTML=(y==20?'@':'>')+c;y+=y<20?1:-y;}c+=x<0?y?1:-c:0;},20);onkeydown=function(){y=y?y:1}</script>
+
+-- JUmp 2
+<p id=p />
+<p id=s>*</p>
+<script>
+	var x=y=c=e=0;
+	setInterval(function(){
+		if(x<=0){
+			e=Math.random()*3+1;
+			x=80*e;
+		}
+		x-=e;
+		s.style.marginLeft=x;
+		y?y+=y<20?1:-y:0;
+		p.innerHTML=(y?'> ':'@ ')+c;
+		c+=x<=0?y?1:-c:0;
+	},20);
+	onkeydown = function(){
+		y=y?y:1;
+	}
+</script>

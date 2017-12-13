@@ -1,0 +1,16 @@
+<script>
+var x=a=k=0
+r=()=>Math.floor(Math.random()*20)
+n=()=>{a=r();k=r()}
+m=(e,x)=>e.style.marginLeft=x*20
+n()
+document.onkeydown=function(v){
+o=v.keyCode-37
+x+=o%2?0:o==0?-1:1
+x==k?n():a+=a-x>0?-1:1
+m(p,x)
+m(e,a)
+m(s,k)
+}
+</script>
+<p id=e>o</p><p id=p>@</p><p id=s><

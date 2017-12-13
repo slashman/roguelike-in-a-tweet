@@ -1,0 +1,101 @@
+<script>
+
+var cities = [];
+
+function addCity(name, population, army){
+	var city = {
+		name: name,
+		population: population,
+		army: army
+	}
+	cities.push(city);
+}
+
+addCity('Ibaran City', 2000000, 20000);
+addCity('Gorn Castle', 1000000, 5000);
+addCity('Merkolia', 800000, 10000);
+addCity('Karsan', 2000000, 20000);
+addCity('Duveria', 200000, 200);
+
+var newEvents = '';
+var casualities = 0;
+var espers = [];
+
+function nextTurn(){
+	newEvents = '';
+	var battles = getBattles();
+	battles.forEach(doBattle);
+	// Other events, reinforcements coming into the cities
+	printAt('events', newEvents);
+	printAt('casualities', casualities);
+	var citiesStatus = '';
+	cities.forEach(function(city){
+		citiesStatus += city.name+', Population: '+city.population+' Army: '+city.army+'<br>';
+	});
+	printAt('status', citiesStatus);
+}
+
+function getBattles(){
+	var numBattles = rand(4)+1;
+	var battles = [];
+	for (var i = 0; i < numBattles; i++){
+		var city = cities[rand(cities.length-1)];
+		battles.push(city);
+	}
+	return battles;
+}
+
+function doBattle(battle){
+	var armyCasualities = rand(2000) + 100;
+	armyCasualities = Math.floor(armyCasualities / (espers.length+1));
+	if (armyCasualities > battle.army){
+		armyCasualities = battle.army;
+	}
+	battle.army -= armyCasualities;
+	// Each soldier defends 30 civilians
+	var defense = battle.army * 30;
+	var civilianCasualities = rand(100000) + 500;
+	civilianCasualities = Math.floor(civilianCasualities / (espers.length+1));
+	civilianCasualities -= defense;
+	if (civilianCasualities <= 0){
+		civilianCasualities = rand(200);
+	}
+	if (civilianCasualities > battle.population){
+		civilianCasualities = battle.population;
+	}
+	battle.population -= civilianCasualities;
+	newEvents += battle.name + ' is attacked! '+armyCasualities+' soldiers and '+civilianCasualities+' people die<br/>';
+	if (battle.army == 0){
+		newEvents += battle.name + '\'s army is wiped out!<br/>';
+	}
+	if (battle.population == 0){
+		newEvents += battle.name + ' is destroyed!<br/>';
+	}
+	casualities += civilianCasualities;
+	casualities += armyCasualities;
+}
+
+function printAt(id, text){
+	document.getElementById(id).innerHTML = text;
+}
+
+function rand(toNum){
+	return Math.floor(Math.random()*toNum);
+}
+
+function sendEsper(){
+	espers.push("Ifrit");
+	printAt('espers', espers.join('-'));
+}
+
+</script>
+
+<div>Espers: <span id = "espers"></span></div>
+<div>Casualities: <span id = "casualities"></span></div>
+<div><span id = "status"></span></div>
+<h2>Events</h2>
+<div><span id = "events"></span></div>
+
+
+<button onclick = "nextTurn();">Next Turn</button>
+<button onclick = "sendEsper();">Send Esper</button>
